@@ -2,7 +2,7 @@ echo "name: Keep Git Green
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Menjalankan job setiap hari pada tengah malam UTC
+    - cron: '0 8 * * *'  # Menjalankan job setiap hari pada tengah malam UTC
 
 jobs:
   update-streak:
