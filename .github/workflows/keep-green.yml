@@ -1,8 +1,12 @@
-echo "name: Keep Git Green
+name: Keep Git Green
 
 on:
   schedule:
-    - cron: '0 8 * * *'  # Menjalankan job setiap hari pada tengah malam UTC
+    - cron: '0 8 * * *'  # 15:00 WIB
+    - cron: '0 9 * * *'  # 16:00 WIB
+    - cron: '0 10 * * *' # 17:00 WIB
+    - cron: '0 11 * * *' # 18:00 WIB
+    - cron: '0 12 * * *' # 19:00 WIB
 
 jobs:
   update-streak:
@@ -14,13 +18,12 @@ jobs:
       
     - name: Update file to trigger commit
       run: |
-        echo \"Update on \$(date)\" >> streak.txt
+        echo "Update on $(date)" >> streak.txt
         
     - name: Commit and push changes
       run: |
         git config --global user.name 'Adib-F'
         git config --global user.email 'fakhrimuhammadadib@gmail.com'
         git add streak.txt
-        git commit -m \"Keep streak green on \$(date)\"
+        git commit -m "Keep streak green on $(date)"
         git push
-" > .github/workflows/keep-green.yml
