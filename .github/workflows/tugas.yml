@@ -26,6 +26,6 @@ jobs:
       run: |
         git config --global user.name 'Adib-F'
         git config --global user.email 'fakhrimuhammadadib@gmail.com'
-        git add adib.txt
+        git add streak.txt
         git commit -m "Keep streak green on $(date)"
         git push
