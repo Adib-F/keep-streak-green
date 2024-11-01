@@ -2,11 +2,11 @@ name: Keep Git Green
 
 on:
   schedule:
-    - cron: '0 8 * * *'  # 15:00 WIB
-    - cron: '0 1 * * *'  # 16:00 WIB
-    - cron: '0 2 * * *' # 17:00 WIB
-    - cron: '0 3 * * *' # 18:00 WIB
-    - cron: '0 4 * * *' # 19:00 WIB
+    - cron: '0 14 * * *'  # 15:00 WIB
+    - cron: '0 15 * * *'  # 16:00 WIB
+    - cron: '0 16 * * *' # 17:00 WIB
+    - cron: '0 17 * * *' # 18:00 WIB
+    - cron: '0 18 * * *' # 19:00 WIB
 
 jobs:
   update-streak:
@@ -21,9 +21,11 @@ jobs:
         echo "Update on $(date)" >> streak.txt
         
     - name: Commit and push changes
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         git config --global user.name 'Adib-F'
         git config --global user.email 'fakhrimuhammadadib@gmail.com'
-        git add streak.txt
+        git add adib.txt
         git commit -m "Keep streak green on $(date)"
-        git push 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 HEAD:main
+        git push
