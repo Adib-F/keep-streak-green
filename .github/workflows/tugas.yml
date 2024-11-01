@@ -3,10 +3,10 @@ name: Keep Git Green
 on:
   schedule:
     - cron: '0 8 * * *'  # 15:00 WIB
-    - cron: '0 0 * * *'  # 16:00 WIB
-    - cron: '0 1 * * *' # 17:00 WIB
-    - cron: '0 2 * * *' # 18:00 WIB
-    - cron: '0 3 * * *' # 19:00 WIB
+    - cron: '0 1 * * *'  # 16:00 WIB
+    - cron: '0 2 * * *' # 17:00 WIB
+    - cron: '0 3 * * *' # 18:00 WIB
+    - cron: '0 4 * * *' # 19:00 WIB
 
 jobs:
   update-streak:
